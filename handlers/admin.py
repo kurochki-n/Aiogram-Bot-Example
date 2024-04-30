@@ -11,8 +11,9 @@ from data.config import ADMIN_ID
 
 router = Router()
 
+
 @router.message(Command("command"))
-async def command_handler(message: Message, state: FSMContext):
+async def command_handler(message: Message, state: FSMContext) -> None:
     if message.from_user.id != ADMIN_ID:
         return
     await message.answer(text=loc.start_message(), reply_markup=kb.reply_keyboard())
@@ -20,7 +21,7 @@ async def command_handler(message: Message, state: FSMContext):
 
     
 @router.message(F.text == "text")
-async def text_handler(message: Message, state: FSMContext):
+async def text_handler(message: Message, state: FSMContext) -> None:
     if message.from_user.id != ADMIN_ID:
         return
     await message.answer(text=loc.start_message(), reply_markup=kb.inline_keyboard())
@@ -28,7 +29,7 @@ async def text_handler(message: Message, state: FSMContext):
 
 
 @router.callback_query(F.data == "data")
-async def calldack_query_handler(callback: types.CallbackQuery, state: FSMContext):
+async def calldack_query_handler(callback: types.CallbackQuery, state: FSMContext) -> None:
     if callback.from_user.id != ADMIN_ID:
         return
     await callback.message.edit_reply_markup(text=loc.start_message(), reply_markup=kb.inline_keyboard())
@@ -36,7 +37,7 @@ async def calldack_query_handler(callback: types.CallbackQuery, state: FSMContex
     
 
 @router.message(StateFilter(States.my_state))
-async def my_state_handler(message: Message, state: FSMContext):
+async def my_state_handler(message: Message, state: FSMContext) -> None:
     if message.from_user.id != ADMIN_ID:
         return
     await message.answer(text=loc.start_message(), reply_markup=kb.inline_webapp_keyboard())

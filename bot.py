@@ -19,7 +19,8 @@ logging.basicConfig(
     ]
     )
 
-async def main():
+
+async def main() -> None:
     bot = Bot(token=BOT_TOKEN, parse_mode=ParseMode.HTML)
     dp = Dispatcher(storage=MemoryStorage())
     dp.include_routers(user_router, admin_router)

@@ -1,6 +1,5 @@
 
-
-def start_message():
+def start_message() -> str:
     return 'Hello!'
 
     
