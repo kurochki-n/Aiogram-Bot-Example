@@ -5,7 +5,7 @@ from aiogram.types.input_file import FSInputFile
 from aiogram.fsm.context import FSMContext
 
 from . import localization as loc, keyboards as kb
-from .states_menu import States
+from .states import States
 from data.config import ADMIN_ID
 
 
