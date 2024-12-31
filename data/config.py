@@ -1,9 +1,15 @@
-import os
-from dotenv import load_dotenv
+from pydantic import SecretStr
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-load_dotenv()
+class Config(BaseSettings):
+    BOT_TOKEN: SecretStr
+    CHANNEL_ID: int | str
 
-BOT_TOKEN = os.getenv('BOT_TOKEN')
-ADMIN_ID = int(os.getenv('ADMIN_ID'))
-CHANNEL_ID = os.getenv('CHANNEL_ID')
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8"
+    )
+
+
+config = Config()
