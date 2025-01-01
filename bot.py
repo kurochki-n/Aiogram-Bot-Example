@@ -11,7 +11,7 @@ from loader import loop
 
 async def main() -> None:
     bot = Bot(
-        token=config.BOT_TOKEN, 
+        token=config.BOT_TOKEN.get_secret_value(), 
         default=DefaultBotProperties(parse_mode=ParseMode.HTML)
     )
     dp = Dispatcher(storage=MemoryStorage())

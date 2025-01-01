@@ -4,7 +4,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Config(BaseSettings):
     BOT_TOKEN: SecretStr
-    CHANNEL_ID: int | str
+    CHANNEL_ID: SecretStr
 
     model_config = SettingsConfigDict(
         env_file=".env",
