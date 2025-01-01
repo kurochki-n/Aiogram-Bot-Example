@@ -3,7 +3,7 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.enums.parse_mode import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
 
-from data.config import config
+from data.config_reader import config
 from handlers.user_router import router as user_router
 from handlers.admin_router import router as admin_router
 from loader import loop

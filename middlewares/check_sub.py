@@ -3,7 +3,7 @@ from typing import Callable, Awaitable, Dict, Any
 from aiogram import BaseMiddleware
 from aiogram.types import Message, CallbackQuery
 
-from data.config import config
+from data.config_reader import config
 
 
 class CheckSubscription(BaseMiddleware):
