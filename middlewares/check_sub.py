@@ -3,10 +3,10 @@ from typing import Callable, Awaitable, Dict, Any
 from aiogram import BaseMiddleware
 from aiogram.types import Message, CallbackQuery
 
-from data.config_reader import config
+from config_reader import config
 
 
-class CheckSubscription(BaseMiddleware):
+class CheckSubscriptionMiddleware(BaseMiddleware):
     
     async def __call__(
         self,

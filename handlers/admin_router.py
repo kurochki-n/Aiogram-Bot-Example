@@ -6,12 +6,9 @@ from aiogram.fsm.context import FSMContext
 
 from . import localization as loc, keyboards as kb
 from .states import States
-from middlewares.check_is_admin import CheckIsAdmin
 
 
 router = Router()
-router.message.middleware.register(CheckIsAdmin())
-router.callback_query.middleware.register(CheckIsAdmin())
 
 
 @router.message(Command("command"))
@@ -23,7 +20,7 @@ async def command_handler(message: Message, state: FSMContext) -> None:
 @router.message(F.text == "text")
 async def text_handler(message: Message, state: FSMContext) -> None:
     await message.answer(text=loc.start_message(), reply_markup=kb.inline_keyboard())
-    await state.set_state(States.my_state)
+    await state.set_state(States.any_state)
 
 
 @router.callback_query(F.data == "data")
@@ -32,7 +29,7 @@ async def calldack_query_handler(callback: types.CallbackQuery, state: FSMContex
     await state.clear()
 
 
-@router.message(StateFilter(States.my_state))
-async def my_state_handler(message: Message, state: FSMContext) -> None:
+@router.message(StateFilter(States.any_state))
+async def any_state_handler(message: Message, state: FSMContext) -> None:
     await message.answer(text=loc.start_message(), reply_markup=kb.inline_webapp_keyboard())
     await state.clear()
