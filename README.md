@@ -1,7 +1,9 @@
-**1. Fill in the .env file**
+**1. Rename .env.example => .env**
 
-**2. Rename .gitignore.example => .gitignore**
+**2. Set up environment variables**
 
-**3. Adapt the bot for yourself**
+**3. Rename .gitignore.example => .gitignore**
+
+**4. Adapt the bot for yourself**
 
 **_Good luck!_**
