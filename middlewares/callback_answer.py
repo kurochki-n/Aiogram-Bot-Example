@@ -1,13 +1,8 @@
 from typing import Callable, Awaitable, Dict, Any
-
 from aiogram import BaseMiddleware
 from aiogram.types import CallbackQuery
 
-from utils import tools
-
-
-class CallbackAnswerMiddleware(BaseMiddleware):
-        
+class CallbackAnswerMiddleware(BaseMiddleware):   
     async def __call__(
         self, 
         handler: Callable[[CallbackQuery, Dict[str, Any]], Awaitable[Any]], 

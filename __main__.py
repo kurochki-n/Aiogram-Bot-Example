@@ -7,7 +7,6 @@ from config_reader import config
 from handlers import setup_routers
 from loader import loop
 
-
 async def start_polling() -> None:
     bot = Bot(
         token=config.BOT_TOKEN.get_secret_value(), 
@@ -18,7 +17,6 @@ async def start_polling() -> None:
     dp.include_routers(setup_routers())
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot, skip_updates=True)
-
 
 if __name__ == "__main__":
     loop.run_until_complete(start_polling())

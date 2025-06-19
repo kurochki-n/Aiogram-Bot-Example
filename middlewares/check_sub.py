@@ -1,10 +1,8 @@
 from typing import Callable, Awaitable, Dict, Any
-
 from aiogram import BaseMiddleware
 from aiogram.types import Message, CallbackQuery
 
 from config_reader import config
-
 
 class CheckSubscriptionMiddleware(BaseMiddleware):
     
