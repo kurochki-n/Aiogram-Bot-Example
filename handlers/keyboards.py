@@ -1,6 +1,7 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup
 from aiogram.types.web_app_info import WebAppInfo
 
+
 def inline_keyboard() -> InlineKeyboardMarkup:
     buttons = [
         [
@@ -12,6 +13,7 @@ def inline_keyboard() -> InlineKeyboardMarkup:
     keyboard = InlineKeyboardMarkup(inline_keyboard=buttons, resize_keyboard=True)
     return keyboard
 
+
 def reply_keyboard() -> ReplyKeyboardMarkup:
     buttons = [
         [KeyboardButton(text='text1')],
@@ -19,6 +21,7 @@ def reply_keyboard() -> ReplyKeyboardMarkup:
     ]
     keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
     return keyboard
+
 
 def inline_webapp_keyboard() -> InlineKeyboardMarkup:
     buttons = [

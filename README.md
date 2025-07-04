@@ -17,33 +17,34 @@
 
 1. **Склонируйте репозиторий:**
    ```bash
-   git clone <repo-url>
-   cd aiogram-bot-example
+   git clone git@github.com:kurochki-n/Aiogram-Bot-Example.git
+   cd Aiogram-Bot-Example
    ```
-2. **Создайте и настройте файл окружения:**
+2. **Создайте и настройте .gitignore и файл окружения:**
+   - Переименуйте `.gitignore.example` в `.gitignore`
    - Переименуйте `.env.example` в `.env`
    - Укажите значения переменных:
      ```env
      BOT_TOKEN=ваш_токен_бота
      CHANNEL_ID=@your_channel_or_id
      ```
-3. **Установите зависимости:**
+3. **Установите зависимости с помощью пакетного менеджера [uv](https://github.com/astral-sh/uv):**
    ```bash
-   pip install -r requirements.txt
+   uv sync
    ```
 4. **Запустите бота:**
    ```bash
-   python __main__.py
+   uv run main.py
    ```
 
 ## Переменные окружения
 - `BOT_TOKEN` — токен вашего Telegram-бота
-- `CHANNEL_ID` — ID или username канала для проверки подписки
+- `CHANNEL_ID` — ID или канала для проверки подписки
 
-## Структура проекта
+## Основная структура проекта
 ```
-aiogram-bot-example/
-├── __main__.py              # Точка входа
+Aiogram-Bot-Example/
+├── main.py                  # Точка входа
 ├── config_reader.py         # Загрузка конфигурации из .env
 ├── handlers/                # Хендлеры команд и сообщений
 │   ├── admin_router.py      # Админ-команды
@@ -57,14 +58,8 @@ aiogram-bot-example/
 │   └── callback_answer.py   # Пример middleware для callback
 ├── utils/                   # Вспомогательные функции
 │   └── tools.py             # Получение списка админов
-├── requirements.txt         # Зависимости
 └── README.md                # Документация
 ```
-
-## Пример команд
-- `/command` — стартовое сообщение
-- Сообщения с текстом `text` — переход в другое состояние
-- Inline и reply клавиатуры для взаимодействия
 
 ## Используемые технологии
 - [aiogram 3.x](https://github.com/aiogram/aiogram)

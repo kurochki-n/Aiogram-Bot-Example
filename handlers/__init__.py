@@ -2,9 +2,7 @@ from aiogram import Router
 
 from .user_router import router as user_router
 from .admin_router import router as admin_router
-from middlewares.check_is_admin import CheckIsAdminMiddleware
-from middlewares.check_sub import CheckSubscriptionMiddleware
-from middlewares.callback_answer import CallbackAnswerMiddleware
+from middlewares import CheckIsAdminMiddleware, CheckSubscriptionMiddleware, CallbackAnswerMiddleware
 
 
 def setup_routers() -> Router:
