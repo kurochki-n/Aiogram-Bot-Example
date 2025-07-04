@@ -20,8 +20,7 @@
    git clone git@github.com:kurochki-n/Aiogram-Bot-Example.git
    cd Aiogram-Bot-Example
    ```
-2. **Создайте и настройте .gitignore и файл окружения:**
-   - Переименуйте `.gitignore.example` в `.gitignore`
+2. **Создайте и настройте файл окружения:**
    - Переименуйте `.env.example` в `.env`
    - Укажите значения переменных:
      ```env
