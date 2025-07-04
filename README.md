@@ -25,8 +25,8 @@
    - Переименуйте `.env.example` в `.env`
    - Укажите значения переменных:
      ```env
-     BOT_TOKEN=ваш_токен_бота
-     CHANNEL_ID=your_channel_id
+     BOT_TOKEN=токен-вашего-бота
+     CHANNEL_ID=айди-вашего-канала
      ```
 3. **Установите зависимости с помощью пакетного менеджера [uv](https://github.com/astral-sh/uv):**
    ```bash
