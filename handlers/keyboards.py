@@ -10,8 +10,7 @@ def inline_keyboard() -> InlineKeyboardMarkup:
         ],
         [InlineKeyboardButton(text='text2', callback_data='data2')]
     ]
-    keyboard = InlineKeyboardMarkup(inline_keyboard=buttons, resize_keyboard=True)
-    return keyboard
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 
 def reply_keyboard() -> ReplyKeyboardMarkup:
@@ -19,13 +18,11 @@ def reply_keyboard() -> ReplyKeyboardMarkup:
         [KeyboardButton(text='text1')],
         [KeyboardButton(text='text2')]
     ]
-    keyboard = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
-    return keyboard
+    return ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
 
 def inline_webapp_keyboard() -> InlineKeyboardMarkup:
     buttons = [
         [InlineKeyboardButton(text='text', web_app=WebAppInfo(url='url'))]
     ]
-    keyboard = InlineKeyboardMarkup(inline_keyboard=buttons, resize_keyboard=True)
-    return keyboard
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
